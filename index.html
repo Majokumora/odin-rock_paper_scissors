@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Rock Paper Scissors</title>
+</head>
+<body>
+    <script>
+        let humanScore;
+        let computerScore;
+
+        function configureChoise(choice){
+            if (choice == 0) {
+                choice = "Rock";
+            }
+            else if (choice == 1) {
+                choice = "Paper";
+            }
+            else {
+                choice = "Scissors";
+            }
+
+            return choice;
+        }
+
+        function getComputerChoice(){
+            let choice = Math.round(Math.random() * 2);
+
+            choice = configureChoise(choice);
+
+            return(choice);
+        }
+
+        function getHumanChoice(){
+            let humanChoise = prompt("Choise:\n0: Rock\n1: Paper\n2: Scissors");
+
+            humanChoise = configureChoise(humanChoise);
+
+            return humanChoise;
+        }
+        
+        console.log(`Computer: ${getComputerChoice()}\nHuman: ${getHumanChoice()}`);
+    </script>
+</body>
+</html>
